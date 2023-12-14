@@ -21,6 +21,7 @@ struct AppManagerInner {
 
 unsafe impl Sync for AppManager {}
 
+//应用管理
 impl AppManagerInner {
     pub fn print_app_info(&self) {
         println!("[kernel] num_app = {}", self.num_app);
@@ -103,6 +104,7 @@ pub fn run_next_app() -> ! {
     panic!("Unreachable in batch::run_current_app!");
 }
 
+//用户和内核
 #[repr(align(4096))]
 struct KernelStack {
     data: [u8; KERNEL_STACK_SIZE],
